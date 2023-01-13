@@ -38,9 +38,9 @@ answer_list = [
 # create an infinite while loop in case user wants to 
 # go through cards multiple times
 while True:
+    # start timer for the user
     time_start = time.time()
     correct_answers = 0
-    wrongs_answers = 0
     print()
     # use enumerate to make it easier to keep track of current list count
     for count, question in enumerate(question_list):
@@ -61,7 +61,6 @@ while True:
                 correct_answers += 1
             else:
                 print(f"Sorry, the real answer was {answer_list[count]}")
-                wrongs_answers += 1
             print()
         else:
             if answer == answer_list[count]:
@@ -69,7 +68,6 @@ while True:
                 correct_answers += 1
             else:
                 print(f"Sorry, the real answer was {answer_list[count]}")
-                wrongs_answers += 1
             print()
     
     # get the end time to tell how long user took to answer questions
