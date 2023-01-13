@@ -46,7 +46,11 @@ while True:
     for count, question in enumerate(question_list):
         # ask the user a question and for their answer
         print(question)
-        answer = int(input("Enter port number: "))
+        
+        try:
+            answer = int(input("Enter port number: "))
+        except ValueError as e:
+            answer = 0
         
         # check if the current value in answer_list is of type list
         # if it is of type list, then simply check if answer is in that specific list,
@@ -71,9 +75,10 @@ while True:
     # get the end time to tell how long user took to answer questions
     end_time = time.time()
     total_time = end_time - time_start
+    
     # number of correct and wrong answers
-    print(f"Your score was {correct_answers}/{len(question_list)}")
-    print(f"Time spent answering questions: {total_time}")
+    print(f"Your score was {correct_answers}/{len(question_list)} or {correct_answers/len(question_list):.2f}%")
+    print(f"Time spent answering questions: {total_time:.2f} Seconds")
     # ask the user if they would like to quit or go again
     exit_prompt = input("Press q to exit. Enter to continue: ")
     
