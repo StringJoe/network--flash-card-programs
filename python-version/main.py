@@ -38,7 +38,7 @@ answer_list = [
 # create an infinite while loop in case user wants to 
 # go through cards multiple times
 while True:
-    quiz_time = time.start()
+    time_start = time.time()
     correct_answers = 0
     wrongs_answers = 0
     print()
@@ -68,8 +68,12 @@ while True:
                 wrongs_answers += 1
             print()
     
+    # get the end time to tell how long user took to answer questions
+    end_time = time.time()
+    total_time = end_time - time_start
     # number of correct and wrong answers
     print(f"Your score was {correct_answers}/{len(question_list)}")
+    print(f"Time spent answering questions: {total_time}")
     # ask the user if they would like to quit or go again
     exit_prompt = input("Press q to exit. Enter to continue: ")
     
