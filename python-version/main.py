@@ -1,4 +1,6 @@
 import time
+import random
+
 
 question_list = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
                  "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
@@ -47,9 +49,12 @@ while True:
     end_time = time.time()
     total_time = end_time - time_start
     
+    time_in_minutes = total_time // 60
+    time_in_seconds = total_time % 60
+    
     # number of correct and wrong answers
     print(f"Your score was {correct_answers}/{len(question_list)} or {correct_answers/len(question_list):.2f}%")
-    print(f"Time spent answering questions: {total_time:.2f} Seconds")
+    print(f"Time spent answering questions: {int(time_in_minutes)}:{time_in_seconds:.2f}")
     # ask the user if they would like to quit or go again
     exit_prompt = input("Press q to exit. Enter to continue: ")
     
