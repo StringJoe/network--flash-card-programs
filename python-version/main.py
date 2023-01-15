@@ -1,39 +1,12 @@
 import time
 
-question_list = [
-    "FTP",
-    "SSH",
-    "SFTP",
-    "Telnet",
-    "SMTP",
-    "DNS",
-    "DHCP",
-    "TFTP",
-    "HTTP",
-    "POP3",
-    "NTP",
-    "NetBIOS",
-    "IMAP",
-    "SNMP",
-    "LDAP",
-    "HTTPS",
-    "SMB",
-    "Syslog",
-    "SMTP TLS",
-    "LDAPS",
-    "IMAP over SSL",
-    "POP3 over SSL",
-    "SQL Server Protocol",
-    "SQLnet Protocol",
-    "MySQL",
-    "RDP",
-    "SIP"
-]
+question_list = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
+                 "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
+                 "SMTP TLS", "LDAPS", "IMAP over SSL", "POP3 over SSL", "SQL Server Protocol",
+                 "SQLnet Protocol", "MySQL", "RDP", "SIP"]
 
-answer_list = [
-    [20, 21], 22, 22, 23, 25, 53, [67,68], 69, 80, 110, 123, 139, 143, 161, 389,
-    443, 445, 514, 587, 636, 993, 995, 1433, 1521, 3306, 3389, [5060, 5061]
-    ]
+answer_list = [ [20, 21], 22, 22, 23, 25, 53, [67,68], 69, 80, 110, 123, 139, 143, 161, 389,
+                443, 445, 514, 587, 636, 993, 995, 1433, 1521, 3306, 3389, [5060, 5061]]
 
 # create an infinite while loop in case user wants to 
 # go through cards multiple times
@@ -82,5 +55,3 @@ while True:
     
     if exit_prompt.lower() == "q":
         break
-    
-
