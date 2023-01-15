@@ -13,6 +13,12 @@ answer_list = [ [20, 21], 22, 22, 23, 25, 53, [67,68], 69, 80, 110, 123, 139, 14
 # create an infinite while loop in case user wants to 
 # go through cards multiple times
 while True:
+    # shuffle the lists around after each round so it's not predictable
+    temp = list(zip(question_list, answer_list))
+    random.shuffle(temp)
+    question_list, answer_list = zip(*temp)
+    question_list, answer_list = list(question_list), list(answer_list)
+    
     # start timer for the user
     time_start = time.time()
     correct_answers = 0
@@ -60,3 +66,5 @@ while True:
     
     if exit_prompt.lower() == "q":
         break
+    
+    
