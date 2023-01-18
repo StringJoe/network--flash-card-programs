@@ -39,7 +39,7 @@ while True:
     # use enumerate to make it easier to keep track of current list count
     for count, question in enumerate(question_list):
         # ask the user a question and for their answer
-        print(question)
+        print(f"Question {count+1}/{len(question_list)}: {question}")
         
         try:
             answer = int(input("Enter port number: "))
@@ -58,7 +58,7 @@ while True:
             print()
         else:
             if answer == answer_list[count]:
-                print("You are correct!")
+                print(f"You are correct! The port numbers are: {answer_list[count]}")
                 correct_answers += 1
             else:
                 print(f"Sorry, the real answer was {answer_list[count]}")
@@ -68,12 +68,19 @@ while True:
     end_time = time.time()
     total_time = end_time - time_start
     
+    # get the time in minutes and seconds as integers
     time_in_minutes = total_time // 60
-    time_in_seconds = total_time % 60
+    time_in_seconds = int(total_time % 60)
+    
+    # get the time in milliseconds as a float 
+    # convert the value to a string and then format it so only that leading numbers aren't showing
+    time_in_milliseconds = (total_time % 60) % 1
+    time_in_milliseconds = str(f"{time_in_milliseconds:.2f}")
+    time_in_milliseconds = time_in_milliseconds[2:]
     
     # number of correct and wrong answers
     print(f"Your score was {correct_answers}/{len(question_list)} or {correct_answers/len(question_list):.2f}%")
-    print(f"Time spent answering questions: {int(time_in_minutes)}:{time_in_seconds:.2f}")
+    print(f"Time spent answering questions: {int(time_in_minutes)}:{time_in_seconds:02d}:{time_in_milliseconds}")
     # ask the user if they would like to quit or go again
     exit_prompt = input("Press q to exit. Enter to continue: ")
     
