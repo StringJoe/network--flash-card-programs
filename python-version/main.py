@@ -1,6 +1,16 @@
 import time
 import random
 
+def banner():
+    print("######################################################")
+    print("             WELCOME TO THE PORT QUIZZER")
+    print("######################################################")
+    
+def gameplay_rules():
+    print()
+    print("The goal is to memorize the common port numbers and services associated with those ports.")
+    print("You can retake the quiz as many times as you want, but questions will not be in the same order each time.")
+    print("After you finish the quiz you will be told how many answers you got right, and how fast you completed it in.")
 
 question_list = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
                  "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
@@ -9,6 +19,9 @@ question_list = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", 
 
 answer_list = [ [20, 21], 22, 22, 23, 25, 53, [67,68], 69, 80, 110, 123, 139, 143, 161, 389,
                 443, 445, 514, 587, 636, 993, 995, 1433, 1521, 3306, 3389, [5060, 5061]]
+
+banner()
+gameplay_rules()
 
 # create an infinite while loop in case user wants to 
 # go through cards multiple times
@@ -66,5 +79,4 @@ while True:
     
     if exit_prompt.lower() == "q":
         break
-    
     
