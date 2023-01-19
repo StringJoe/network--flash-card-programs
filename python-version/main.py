@@ -1,4 +1,5 @@
 import flashcards
+import read_file
 
 def banner():
     print("######################################################")
@@ -25,9 +26,9 @@ while True:
         case 1:
             flashcards.start_game()
         case 2:
-            print("work on 2")
+            read_file.service_info()
         case 3:
-            print("work on 3")
+            print("working on 3")
         case 4:
             print("Thank you for using Port Quizzer!")
             break
