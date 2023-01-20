@@ -1,4 +1,4 @@
-import flashcards
+import port_quiz
 import read_file
 
 def banner():
@@ -25,7 +25,7 @@ while True:
     
     match user_choice:
         case 1:
-            flashcards.start_game()
+            port_quiz.start_game()
         case 2:
             read_file.service_info()
         case 3:
