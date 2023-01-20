@@ -1,5 +1,6 @@
 import time
 import random
+import quiz_time
 
 def start_game():
     
@@ -54,17 +55,9 @@ def start_game():
         
         # get the end time to tell how long user took to answer questions
         end_time = time.time()
-        total_time = end_time - time_start
         
-        # get the time in minutes and seconds as integers
-        time_in_minutes = total_time // 60
-        time_in_seconds = int(total_time % 60)
-        
-        # get the time in milliseconds as a float 
-        # convert the value to a string and then format it so only that leading numbers aren't showing
-        time_in_milliseconds = (total_time % 60) % 1
-        time_in_milliseconds = str(f"{time_in_milliseconds:.2f}")
-        time_in_milliseconds = time_in_milliseconds[2:]
+        # get the minutes, seconds, and milliseconds from time
+        minutes, seconds, milliseconds = quiz_time.quiz_timer(time_start, end_time)
         
         # get user score percentage
         percent_score = (correct_answers/len(question_list))*100
@@ -72,7 +65,7 @@ def start_game():
         
         # number of correct and wrong answers
         print(f"Your score was {correct_answers}/{len(question_list)} or {percent_score}%")
-        print(f"Time spent answering questions: {int(time_in_minutes)}:{time_in_seconds:02d}:{time_in_milliseconds}")
+        print(f"Time spent answering questions: {int(minutes)}:{seconds:02d}:{milliseconds}")
         # ask the user if they would like to quit or go again
         exit_prompt = input("Press q to exit. Enter to continue: ")
         

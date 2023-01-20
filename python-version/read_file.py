@@ -4,10 +4,13 @@ import json
 with open("port_number_information.json", 'r') as openfile:
     json_object = json.load(openfile)
 
-services_list = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
-                 "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
-                 "SMTP TLS", "LDAPS", "IMAP over SSL", "POP3 over SSL", "SQL Server Protocol",
-                 "SQLnet Protocol", "MySQL", "RDP", "SIP"]
+# create a list to hold names of protocols
+services_list = []
+
+# loop through keys and add them to list. 
+# use these keys as a menu for user to select protocol
+for key in json_object.keys():
+    services_list.append(key)
 
 # display the list of common ports to the user
 def services_menu():

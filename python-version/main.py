@@ -10,7 +10,7 @@ def menu_choice():
     print("#1: Port Number Quiz")
     print("#2: Ports Number Information")
     print("#3: 802.11 Standards Quiz")
-    print("#4 Cable Quiz")
+    print("#4: Cable Quiz")
     print("#5: Exit Application")
     choice = int(input("Please enter a number: "))
     
