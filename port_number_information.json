@@ -9,11 +9,11 @@
     "TFTP": "Transmits files in both directions of a client-server application. Used for booting an operating system from a local area network file server. Essentially a stripped-down version of FTP.",
     "HTTP": "Foundation of data communication for WWW. Is used to access websites.",
     "POP3": "Used by local e-mail clients to retrieve e-mail from a remote server over TCP/IP connection.",
-    "NTP": "Provides clock synchornoization between computer systems over packet-switched, variable-latency data networks.",
+    "NTP": "Provides clock synchronization between computer systems over packet-switched, variable-latency data networks.",
     "NetBIOS": "Provides services allowing applications on separate computers to communicate over a local area network for file and printer sharing.",
     "IMAP": "Provides e-mail clients to retrieve e-mail messages from a mail server over a TCP/IP connection. Allows the user to view and manipulate the messages as if they're stored locally.",
     "SNMP": "Provides collection and organization of information about managed devices on IP networks. Can modify that information to change device behavior, commonly used in network devices.",
-    "LDAP": "Open, vendor-neutral, industry standard for accessing and maintaining distributed directory infomration services. LDAP and Active Directory use this port.",
+    "LDAP": "Open, vendor-neutral, industry standard for accessing and maintaining distributed directory information services. LDAP and Active Directory use this port.",
     "HTTPS": "A secure version of HTTP.",
     "SMB": "Provides shared access to files, printers, and miscellaneous communications between devices on a network.",
     "Syslog": "Used to send logging data back to a centralized server.",
@@ -25,5 +25,5 @@
     "SQLnet Protocol": "Used for communication from a client to an Oracle database.",
     "MySQL": "Used for communication from a client to the MySQL database engine.",
     "RDP": "Provides a user with a graphical interface to connect to another computer over a network connection.",
-    "SIP": "Provides signaling and controlling multimedia communicatino sessions in applications. used for Internet telephony for voice and video calls, VOIP, and instant messaging."
+    "SIP": "Provides signaling and controlling multimedia communication sessions in applications. used for Internet telephony for voice and video calls, VOIP, and instant messaging."
 }

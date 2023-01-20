@@ -3,12 +3,12 @@ import read_file
 
 def banner():
     print("######################################################")
-    print("             WELCOME TO THE PORT QUIZZER")
+    print("           WELCOME TO THE NETWORK+ TRAINER")
     print("######################################################")
     
 def menu_choice():
     print("#1: Port Number Quiz")
-    print("#2: Ports Number Information")
+    print("#2: Port Number Information")
     print("#3: 802.11 Standards Quiz")
     print("#4: Cable Quiz")
     print("#5: Exit Application")
