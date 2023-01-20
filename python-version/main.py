@@ -7,10 +7,11 @@ def banner():
     print("######################################################")
     
 def menu_choice():
-    print("#1: Flashcards Quiz")
-    print("#2: Ports And Services Information")
-    print("#3: Scoreboard")
-    print("#4: Exit Application")
+    print("#1: Port Number Quiz")
+    print("#2: Ports Number Information")
+    print("#3: 802.11 Standards Quiz")
+    print("#4 Cable Quiz")
+    print("#5: Exit Application")
     choice = int(input("Please enter a number: "))
     
     return choice   
@@ -28,8 +29,10 @@ while True:
         case 2:
             read_file.service_info()
         case 3:
-            print("working on 3")
+            print("working on wireless standard quiz")
         case 4:
+            print("Working on cables quiz")
+        case 5:
             print("Thank you for using Port Quizzer!")
             break
         case _:

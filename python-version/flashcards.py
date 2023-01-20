@@ -70,7 +70,6 @@ def start_game():
         percent_score = (correct_answers/len(question_list))*100
         percent_score = int(percent_score)
         
-        
         # number of correct and wrong answers
         print(f"Your score was {correct_answers}/{len(question_list)} or {percent_score}%")
         print(f"Time spent answering questions: {int(time_in_minutes)}:{time_in_seconds:02d}:{time_in_milliseconds}")
