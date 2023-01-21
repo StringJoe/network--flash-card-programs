@@ -1,5 +1,5 @@
 import time
-import random
+import shuffle_lists
 import quiz_time
 
 def start_game():
@@ -16,10 +16,7 @@ def start_game():
     # go through cards multiple times
     while True:
         # shuffle the lists around after each round so it's not predictable
-        temp = list(zip(question_list, answer_list))
-        random.shuffle(temp)
-        question_list, answer_list = zip(*temp)
-        question_list, answer_list = list(question_list), list(answer_list)
+        question_list, answer_list = shuffle_lists.shuffle_quiz(question_list, answer_list)
         
         # start timer for the user
         time_start = time.time()
@@ -30,6 +27,7 @@ def start_game():
             # ask the user a question and for their answer
             print(f"Question {count+1}/{len(question_list)}: {question}")
             
+            # if user enters wrong value then just assign 0 and move on to next question
             try:
                 answer = int(input("Enter port number: "))
             except ValueError as e:
