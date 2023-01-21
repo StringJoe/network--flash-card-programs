@@ -1,5 +1,6 @@
 import port_quiz
 import read_file
+import wifi_standards_quiz
 
 def banner():
     print("######################################################")
@@ -29,7 +30,7 @@ while True:
         case 2:
             read_file.service_info()
         case 3:
-            print("working on wireless standard quiz")
+            wifi_standards_quiz.start_game()
         case 4:
             print("Working on cables quiz")
         case 5:
