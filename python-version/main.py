@@ -16,6 +16,10 @@ wifi_frequencies =["Frequency 5 Ghz, Bandwidth 54 Mbps", "Frequency 2.4 Ghz, Ban
 
 wifi_standards = ["802.11a", "802.11b", "802.11g", "802.11n", "802.11ac", "802.11ax"]
 
+ethernet_name = ["Link Aggregation", "Power Over Ethernet up to 15.4 Watts", "Power Over Ethernet up to 25.5 Watts",
+                 "User Authentication", "Spanning Tree Protocol"]
+ethernet_standard = ["802.3ad", "802.3af", "802.3at", "802.1x","802.1D"]
+
 dns_record = ["A", "AAAA", "CNAME", "MX", "NS", "PTR", "SOA", "SRV", "TXT"]
 dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical Name Record', 
                    'Mail Exchange Record', 'Nameserver Record', 'Pointer Record', 
@@ -58,7 +62,7 @@ while True:
         case 3:
             start_quiz.start_game(wifi_frequencies, wifi_standards, user_choice)
         case 4:
-            print("Working on 802.1 standards")
+            start_quiz.start_game(ethernet_name, ethernet_standard, user_choice)
         case 5:
             print("Working on Cable Quiz")
         case 6:

@@ -13,17 +13,22 @@ def start_game(question_list, answer_list, quiz_choice):
         # start timer for the user
         time_start = time.time()
         correct_answers = 0
-        print()
+
         # use enumerate to make it easier to keep track of current list count
         for count, question in enumerate(question_list):
             # ask the user a question and ask for their answer
             print(f"Question {count+1}/{len(question_list)}: {question}")
             
+            # this is where answers will be checked based on quiz chosen by the user.
+            # the memory quiz is where the user enters in a number without a list of numbers to choose from
+            # whereas the menu quiz is where the user will have a list of choices to help them out.
             match quiz_choice:
                 case 1:
-                    correct_answers += port_quiz(answer_list, count)
+                    correct_answers += memory_quiz(answer_list, count)
                 case 3:
                    correct_answers += menu_quiz(menu_choice, answer_list, count)
+                case 4:
+                    correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case 6:
                     correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case _:
@@ -48,7 +53,7 @@ def start_game(question_list, answer_list, quiz_choice):
         if exit_prompt.lower() == "q":
             break
 
-def port_quiz(answer_list, count):
+def memory_quiz(answer_list, count):
     # if user enters wrong value then just assign 0 and move on to next question
             try:
                 answer = int(input("Enter port number: "))
