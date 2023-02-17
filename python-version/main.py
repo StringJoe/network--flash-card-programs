@@ -1,19 +1,46 @@
 import port_quiz
 import read_file
 import wifi_standards_quiz
+import start_quiz
+
+port_names = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
+                 "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
+                 "SMTP TLS", "LDAPS", "IMAP over SSL", "POP3 over SSL", "SQL Server Protocol",
+                 "SQLnet Protocol", "MySQL", "RDP", "SIP"]
+
+port_numbers = [[20, 21], 22, 22, 23, 25, 53, [67,68], 69, 80, 110, 123, 139, 143, 161, 389,
+                    443, 445, 514, 587, 636, 993, 995, 1433, 1521, 3306, 3389, [5060, 5061]]
+
+wifi_frequencies =["Frequency 5 Ghz, Bandwidth 54 Mbps", "Frequency 2.4 Ghz, Bandwidth 11Mbps",
+                "Frequency 2.4Ghz, Bandwidth 54Mbps", "Frequency 2.4 and 5GHz, Bandwidth 150/600Mbps (MIMO)",
+                "Frequency 5GHz, Bandwidth 3Gbps (MU-MIMO)", "Frequency 2.4, 5 and 6 GHz, Bandwidth 9.6Gbps (MU-MIMO)"]
+
+wifi_standards = ["a", "b", "g", "n", "ac", "ax"]
+
+dns_record = ["A", "AAAA", "CNAME", "MX", "NS", "PTR", "SOA", "SRV", "TXT"]
+dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical Name Record', 
+                   'Mail Exchange Record', ' Nameserver Record', 'Pointer Record', 
+                   'Start Of Authority Record', 'Service Location Record', 'Text Record']
 
 def banner():
     print("######################################################")
     print("           WELCOME TO THE NETWORK+ TRAINER")
     print("######################################################")
+    print()
     
 def menu_choice():
     print("#1: Port Number Quiz")
-    print("#2: Port Number Information")
+    print("#2: Protocol Information")
     print("#3: 802.11 Standards Quiz")
-    print("#4: Cable Quiz")
-    print("#5: Exit Application")
-    choice = int(input("Please enter a number: "))
+    print("#4: 802.1 Standards Quiz")
+    print("#5: Cat Cable Quiz")
+    print("#6: DNS Records Quiz")
+    print("#7: Exit Application")
+    print()
+    try:
+        choice = int(input("Please enter a number: "))
+    except ValueError as e:
+        print("Wrong Value Entered")
     
     return choice   
     
@@ -26,18 +53,22 @@ while True:
     
     match user_choice:
         case 1:
-            port_quiz.start_game()
+            start_quiz.start_game(port_names, port_numbers, user_choice)
         case 2:
             read_file.service_info()
         case 3:
-            wifi_standards_quiz.start_game()
+            start_quiz.start_game(wifi_frequencies, wifi_standards, user_choice)
         case 4:
-            print("Working on cables quiz")
+            print("Working on 802.1 standards")
         case 5:
+            print("Working on Cable Quiz")
+        case 6:
+            print("Working on DNS Quiz")
+        case 7:
             print("Thank you for using Port Quizzer!")
             break
         case _:
-            print("Choose a number between 1 and 4")
+            print("Choose a number between 1 and 7")
     # add whitespace between answers
     print()
     

@@ -9,7 +9,7 @@ services_list = []
 
 # loop through keys and add them to list. 
 # use these keys as a menu for user to select protocol
-for key in json_object.keys():
+for key, value in json_object.items():
     services_list.append(key)
 
 # display the list of common ports to the user
@@ -23,10 +23,15 @@ def service_info():
     while True:
         services_menu()
         
-        # get the users choice and subtract one to get accurate entry
-        user_choice = int(input("Please choose a number: "))
-        user_choice -= 1
-    
+        try:
+            # get the users choice and subtract one to get accurate entry
+            user_choice = int(input("Please choose a number: "))
+            
+        except ValueError as e:
+            print("Invalid Option Chosen")
+            break
+            
+        user_choice -= 1   
         # print out the name of the service followed by the information about it  
         print()
         print(f"Service Name: {services_list[user_choice]}")
