@@ -20,6 +20,11 @@ ethernet_name = ["Link Aggregation", "Power Over Ethernet up to 15.4 Watts", "Po
                  "User Authentication", "Spanning Tree Protocol"]
 ethernet_standard = ["802.3ad", "802.3af", "802.3at", "802.1x","802.1D"]
 
+cat_cable = ["Cat 3", "Cat 5", "Cat 5e", "Cat 6", "Cat 6a", "Cat 7", "Cat 8"]
+cat_standard = ["10Base-T/10 Mbps/100 meters", "100Base-TX/100 Mbps/100 Meters", "1000Base-T/1000 Mbps/100 Meters",
+                "1000Base-T/10GBase-T/1000 Mbps/10 Gbps/100 Meters/55 Meters", "10GBase-T/10 Gbps/100 Meters",
+                "10GBase-T/10 Gbps/100 Meters", "40GBase-T/40 Gbps/30 Meters"]
+
 dns_record = ["A", "AAAA", "CNAME", "MX", "NS", "PTR", "SOA", "SRV", "TXT"]
 dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical Name Record', 
                    'Mail Exchange Record', 'Nameserver Record', 'Pointer Record', 
@@ -64,7 +69,7 @@ while True:
         case 4:
             start_quiz.start_game(ethernet_name, ethernet_standard, user_choice)
         case 5:
-            print("Working on Cable Quiz")
+            start_quiz.start_game(cat_cable, cat_standard, user_choice)
         case 6:
             start_quiz.start_game(dns_description, dns_record, user_choice)
         case 7:

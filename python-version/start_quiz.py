@@ -29,6 +29,8 @@ def start_game(question_list, answer_list, quiz_choice):
                    correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case 4:
                     correct_answers += menu_quiz(menu_choice, answer_list, count)
+                case 5:
+                    correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case 6:
                     correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case _:
@@ -55,41 +57,47 @@ def start_game(question_list, answer_list, quiz_choice):
 
 def memory_quiz(answer_list, count):
     # if user enters wrong value then just assign 0 and move on to next question
-            try:
-                answer = int(input("Enter port number: "))
-            except ValueError as e:
-                answer = 0
+    print()
+    try:
+        answer = int(input("Enter port number: "))
+    except ValueError as e:
+        answer = 0
             
-            # check if the current value in answer_list is of type list
-            # if it is of type list, then simply check if answer is in that specific list,
-            # otherwise check if value is equal to current list value
-            if isinstance(answer_list[count], list):
-                if answer in answer_list[count]:
-                    print(f"You are correct! The port numbers are: {answer_list[count]}")
-                    print()
-                    return 1
-                else:
-                    print(f"Sorry, the real answer was {answer_list[count]}")
-                    print()
-                    return 0
-            else:
-                if answer == answer_list[count]:
-                    print(f"You are correct! The port numbers are: {answer_list[count]}")
-                    print()
-                    return 1
-                else:
-                    print(f"Sorry, the real answer was {answer_list[count]}")
-                    print()
-                    return 0
+    # check if the current value in answer_list is of type list
+    # if it is of type list, then simply check if answer is in that specific list,
+    # otherwise check if value is equal to current list value
+    if isinstance(answer_list[count], list):
+        if answer in answer_list[count]:
+            print(f"You are correct! The port numbers are: {answer_list[count]}")
+            print()
+            return 1
+        else:
+            print(f"Sorry, the real answer was {answer_list[count]}")
+            print()
+            return 0
+    else:
+        if answer == answer_list[count]:
+            print(f"You are correct! The port numbers are: {answer_list[count]}")
+            print()
+            return 1
+        else:
+            print(f"Sorry, the real answer was {answer_list[count]}")
+            print()
+            return 0
                 
 def menu_quiz(menu_choice, answer_list, count):
     # give the user a list of choices
             for c, i in enumerate(menu_choice):
                 print(f"#{c+1}: {i}")
             
+            print()
              # if user enters wrong value then just assign 0 and move on to next question
             try:
                 answer = int(input(f"Enter a number between 1 and {len(menu_choice)}: "))
+                
+                # check if answer is out of bounds
+                if answer < 1 or answer > len(menu_choice):
+                    answer = 0
             except ValueError as e:
                 answer = 0
                 
