@@ -23,7 +23,9 @@ def start_game(question_list, answer_list, quiz_choice):
                 case 1:
                     correct_answers += port_quiz(answer_list, count)
                 case 3:
-                   correct_answers += wifi_quiz(menu_choice, answer_list, count)
+                   correct_answers += menu_quiz(menu_choice, answer_list, count)
+                case 6:
+                    correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case _:
                     break
             
@@ -75,23 +77,24 @@ def port_quiz(answer_list, count):
                     print()
                     return 0
                 
-def wifi_quiz(menu_choice, answer_list, count):
+def menu_quiz(menu_choice, answer_list, count):
     # give the user a list of choices
             for c, i in enumerate(menu_choice):
-                print(f"#{c+1}: 802.11{i}")
+                print(f"#{c+1}: {i}")
             
              # if user enters wrong value then just assign 0 and move on to next question
             try:
-                answer = int(input("Enter a number between 1 and 6: "))
+                answer = int(input(f"Enter a number between 1 and {len(menu_choice)}: "))
             except ValueError as e:
                 answer = 0
                 
             # take their guess and subtract one for the right index
             if menu_choice[answer-1] == answer_list[count]:
-                print(f"You are correct! The standard was: 802.11{answer_list[count]}")
+                print(f"You are correct! The answer was: {answer_list[count]}")
+                print()
                 return 1
             else:
-                print(f"Sorry, the real answer was 802.11{answer_list[count]}")
+                print(f"Sorry, the real answer was: {answer_list[count]}")
                 print()
                 return 0
             

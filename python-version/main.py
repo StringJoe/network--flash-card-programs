@@ -1,8 +1,7 @@
-import port_quiz
 import read_file
-import wifi_standards_quiz
 import start_quiz
 
+# lists containing questions and answers for the different quizzes offered in the program
 port_names = ["FTP", "SSH", "SFTP", "Telnet", "SMTP", "DNS", "DHCP", "TFTP", "HTTP",
                  "POP3", "NTP", "NetBIOS", "IMAP", "SNMP", "LDAP", "HTTPS", "SMB", "Syslog",
                  "SMTP TLS", "LDAPS", "IMAP over SSL", "POP3 over SSL", "SQL Server Protocol",
@@ -15,11 +14,11 @@ wifi_frequencies =["Frequency 5 Ghz, Bandwidth 54 Mbps", "Frequency 2.4 Ghz, Ban
                 "Frequency 2.4Ghz, Bandwidth 54Mbps", "Frequency 2.4 and 5GHz, Bandwidth 150/600Mbps (MIMO)",
                 "Frequency 5GHz, Bandwidth 3Gbps (MU-MIMO)", "Frequency 2.4, 5 and 6 GHz, Bandwidth 9.6Gbps (MU-MIMO)"]
 
-wifi_standards = ["a", "b", "g", "n", "ac", "ax"]
+wifi_standards = ["802.11a", "802.11b", "802.11g", "802.11n", "802.11ac", "802.11ax"]
 
 dns_record = ["A", "AAAA", "CNAME", "MX", "NS", "PTR", "SOA", "SRV", "TXT"]
 dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical Name Record', 
-                   'Mail Exchange Record', ' Nameserver Record', 'Pointer Record', 
+                   'Mail Exchange Record', 'Nameserver Record', 'Pointer Record', 
                    'Start Of Authority Record', 'Service Location Record', 'Text Record']
 
 def banner():
@@ -63,7 +62,7 @@ while True:
         case 5:
             print("Working on Cable Quiz")
         case 6:
-            print("Working on DNS Quiz")
+            start_quiz.start_game(dns_description, dns_record, user_choice)
         case 7:
             print("Thank you for using Port Quizzer!")
             break
