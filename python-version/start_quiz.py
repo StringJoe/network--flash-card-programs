@@ -1,4 +1,5 @@
 import time
+import random
 import shuffle_lists
 import quiz_time
 
@@ -86,28 +87,31 @@ def memory_quiz(answer_list, count):
             return 0
                 
 def menu_quiz(menu_choice, answer_list, count):
+    # shuffle the menu choice so game is based more on remembering actual info
+    random.shuffle(menu_choice)
+    print()
     # give the user a list of choices
-            for c, i in enumerate(menu_choice):
-                print(f"#{c+1}: {i}")
-            
-            print()
-             # if user enters wrong value then just assign 0 and move on to next question
-            try:
-                answer = int(input(f"Enter a number between 1 and {len(menu_choice)}: "))
-                
-                # check if answer is out of bounds
-                if answer < 1 or answer > len(menu_choice):
-                    answer = 0
-            except ValueError as e:
-                answer = 0
-                
-            # take their guess and subtract one for the right index
-            if menu_choice[answer-1] == answer_list[count]:
-                print(f"You are correct! The answer was: {answer_list[count]}")
-                print()
-                return 1
-            else:
-                print(f"Sorry, the real answer was: {answer_list[count]}")
-                print()
-                return 0
+    for c, i in enumerate(menu_choice):
+        print(f"#{c+1}: {i}")
+    
+    print()
+    # if user enters wrong value then just assign 0 and move on to next question
+    try:
+        answer = int(input(f"Enter a number between 1 and {len(menu_choice)}: "))
+        
+        # check if answer is out of bounds
+        if answer < 1 or answer > len(menu_choice):
+            answer = 0
+    except ValueError as e:
+        answer = 0
+        
+    # take their guess and subtract one for the right index
+    if menu_choice[answer-1] == answer_list[count]:
+        print(f"You are correct! The answer was: {answer_list[count]}")
+        print()
+        return 1
+    else:
+        print(f"Sorry, the real answer was: {answer_list[count]}")
+        print()
+        return 0
             
