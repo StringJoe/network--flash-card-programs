@@ -34,6 +34,8 @@ def start_game(question_list, answer_list, quiz_choice):
                     correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case 6:
                     correct_answers += menu_quiz(menu_choice, answer_list, count)
+                case 7:
+                    correct_answers += menu_quiz(menu_choice, answer_list, count)
                 case _:
                     break
             

@@ -30,6 +30,10 @@ dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical 
                    'Mail Exchange Record', 'Nameserver Record', 'Pointer Record', 
                    'Start Of Authority Record', 'Service Location Record', 'Text Record']
 
+alert_level = ['0', '1', '2', '3', '4', '5','6','7']
+alert_level_answer = ["Emergency", "Alert", "Critical", "Error", "Warning",
+                      "Notice", "Information", "Debugging"]
+
 def banner():
     print("######################################################")
     print("           WELCOME TO THE NETWORK+ TRAINER")
@@ -37,14 +41,19 @@ def banner():
     print()
     
 def menu_choice():
-    print("#1: Port Number Quiz")
-    print("#2: Protocol Information")
-    print("#3: 802.11 Standards Quiz")
-    print("#4: 802.1 Standards Quiz")
-    print("#5: Cat Cable Quiz")
-    print("#6: DNS Records Quiz")
-    print("#7: Exit Application")
+    choices = ["Port Number Quiz", "Protocol Information", "802.11 Standards Quiz",
+               "802.1 Standards Quiz", "Cat Cable Quiz", "DNS Records Quiz", "Log Level Quiz"]
+    for c, i in enumerate(choices):
+        print(f"#{c+1}: {i}")
+    print(f"#{c+2}: Exit Application")
     print()
+    #print("#1: Port Number Quiz")
+    #print("#2: Protocol Information")
+    #print("#3: 802.11 Standards Quiz")
+    #print("#4: 802.1 Standards Quiz")
+    #print("#5: Cat Cable Quiz")
+    #print("#6: DNS Records Quiz")
+    
     try:
         choice = int(input("Please enter a number: "))
     except ValueError as e:
@@ -73,6 +82,8 @@ while True:
         case 6:
             start_quiz.start_game(dns_description, dns_record, user_choice)
         case 7:
+            start_quiz.start_game(alert_level, alert_level_answer, user_choice)
+        case 8:
             print("Thank you for using Port Quizzer!")
             break
         case _:
