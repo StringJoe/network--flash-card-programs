@@ -34,6 +34,11 @@ alert_level = ['0', '1', '2', '3', '4', '5','6','7']
 alert_level_answer = ["Emergency", "Alert", "Critical", "Error", "Warning",
                       "Notice", "Information", "Debugging"]
 
+fiber_question = ['100base-fx', '100base-sx', '1000base-sx',
+                '1000base-lx', '10gbase-sr', '10gbase-lr']
+fiber_answer = ['MMF/100 Mbps/2 km', 'MMF/100 Mbps/300 m', 'MMF/1000 Mbps/220-550 m',
+                'SMF/MMF/1000 Mbps/5 km/500 m', 'MMF/10 Gbps/400 m', 'SMF/10 Gbps/10 km']
+
 def banner():
     print("######################################################")
     print("           WELCOME TO THE NETWORK+ TRAINER")
@@ -42,7 +47,8 @@ def banner():
     
 def menu_choice():
     choices = ["Port Number Quiz", "Protocol Information", "802.11 Standards Quiz",
-               "802.1 Standards Quiz", "Cat Cable Quiz", "DNS Records Quiz", "Log Level Quiz"]
+               "802.1 Standards Quiz", "Cat Cable Quiz", "DNS Records Quiz", "Log Level Quiz",
+               'Fiber Cable Quiz']
     for c, i in enumerate(choices):
         print(f"#{c+1}: {i}")
     print(f"#{c+2}: Exit Application")
@@ -84,6 +90,8 @@ while True:
         case 7:
             start_quiz.start_game(alert_level, alert_level_answer, user_choice)
         case 8:
+            start_quiz.start_game(fiber_question, fiber_answer, user_choice)
+        case 9:
             print("Thank you for using Port Quizzer!")
             break
         case _:

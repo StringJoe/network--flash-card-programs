@@ -23,21 +23,10 @@ def start_game(question_list, answer_list, quiz_choice):
             # this is where answers will be checked based on quiz chosen by the user.
             # the memory quiz is where the user enters in a number without a list of numbers to choose from
             # whereas the menu quiz is where the user will have a list of choices to help them out.
-            match quiz_choice:
-                case 1:
-                    correct_answers += memory_quiz(answer_list, count)
-                case 3:
-                   correct_answers += menu_quiz(menu_choice, answer_list, count)
-                case 4:
-                    correct_answers += menu_quiz(menu_choice, answer_list, count)
-                case 5:
-                    correct_answers += menu_quiz(menu_choice, answer_list, count)
-                case 6:
-                    correct_answers += menu_quiz(menu_choice, answer_list, count)
-                case 7:
-                    correct_answers += menu_quiz(menu_choice, answer_list, count)
-                case _:
-                    break
+            if quiz_choice > 1:
+                correct_answers += menu_quiz(menu_choice, answer_list, count)
+            else:
+                correct_answers += memory_quiz(answer_list, count)
             
             # get the end time to tell how long user took to answer questions
         end_time = time.time()
