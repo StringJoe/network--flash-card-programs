@@ -25,12 +25,16 @@ cat_standard = ["10Base-T/10 Mbps/100 meters", "100Base-TX/100 Mbps/100 Meters",
                 "1000Base-T/10GBase-T/1000 Mbps/10 Gbps/100 Meters/55 Meters", "10GBase-T/10 Gbps/100 Meters",
                 "10GBase-T/10 Gbps/100 Meters", "40GBase-T/40 Gbps/30 Meters"]
 
-dns_record = ["A", "AAAA", "CNAME", "MX", "NS", "PTR", "SOA", "SRV", "TXT"]
-dns_description = ['Address Record (Ipv4)', 'Address Record (Ipv6)', 'Canonical Name Record', 
-                   'Mail Exchange Record', 'Nameserver Record', 'Pointer Record', 
-                   'Start Of Authority Record', 'Service Location Record', 'Text Record']
+dns_description = ['Links a hostname to an IPv4 address', 'Links a hostname to an IPv6 address', 
+                   'Points a domain to another domain or subdomain', 'Directs emails to a mail server', 
+                   'Stores important information about a domain or zone', 'Correlates an IP address with a domain name', 
+                   'Adds text into the DNS', 'Specifies a host and port for a specific service', 
+                   'Indicates which DNS nameserver has the authority']
+dns_record = ["A/Address Record (Ipv4)", "AAAA/Address Record (Ipv6)", "CNAME/Canonical Name Record", 
+              "MX/Mail Exchange Record", "SOA Start Of Authority Record", "PTR/Pointer Record",
+              "TXT/Text Record", "SRV/Service Location Record", "NS/Nameserver Record"]
 
-alert_level = ['0', '1', '2', '3', '4', '5','6','7']
+alert_level = ['Level 0', 'Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5','Level 6','Level 7']
 alert_level_answer = ["Emergency", "Alert", "Critical", "Error", "Warning",
                       "Notice", "Information", "Debugging"]
 
@@ -86,7 +90,7 @@ while True:
         case 5:
             start_quiz.start_game(cat_cable, cat_standard, user_choice)
         case 6:
-            start_quiz.start_game(dns_description, dns_record, user_choice)
+            start_quiz.start_game(dns_record, dns_description, user_choice)
         case 7:
             start_quiz.start_game(alert_level, alert_level_answer, user_choice)
         case 8:
