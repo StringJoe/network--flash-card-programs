@@ -30,7 +30,7 @@ dns_description = ['Links a hostname to an IPv4 address', 'Links a hostname to a
                    'Stores important information about a domain or zone', 'Correlates an IP address with a domain name', 
                    'Adds text into the DNS', 'Specifies a host and port for a specific service', 
                    'Indicates which DNS nameserver has the authority']
-dns_record = ["A/Address Record (Ipv4)", "AAAA/Address Record (Ipv6)", "CNAME/Canonical Name Record", 
+dns_record = ["A/Address Record", "AAAA/Address Record", "CNAME/Canonical Name Record", 
               "MX/Mail Exchange Record", "SOA Start Of Authority Record", "PTR/Pointer Record",
               "TXT/Text Record", "SRV/Service Location Record", "NS/Nameserver Record"]
 
@@ -43,6 +43,13 @@ fiber_question = ['100base-fx', '100base-sx', '1000base-sx',
 fiber_answer = ['MMF/100 Mbps/2 km', 'MMF/100 Mbps/300 m', 'MMF/1000 Mbps/220-550 m',
                 'SMF/MMF/1000 Mbps/5 km/500 m', 'MMF/10 Gbps/400 m', 'SMF/10 Gbps/10 km']
 
+cloud_question = ['Allows outsourcing of a network to a service provider', 'Allows outsourcing of infrastructure',
+                  'User interacts with a web based application', 'provides a development platform',
+                  'Provides a desktop environment accessible through the internet']
+cloud_answer = ['Network as a service (NaaS)', 'Infrastructure as a service (IaaS)',
+                'Software as a service (SaaS)', 'Platform as a service (Paas)', 
+                'Desktop as a service (DaaS)']
+
 def banner():
     print("######################################################")
     print("           WELCOME TO THE NETWORK+ TRAINER")
@@ -52,7 +59,7 @@ def banner():
 def menu_choice():
     choices = ["Port Number Quiz", "Protocol Information", "802.11 Standards Quiz",
                "802.1 Standards Quiz", "Cat Cable Quiz", "DNS Records Quiz", "Log Level Quiz",
-               'Fiber Cable Quiz']
+               'Fiber Cable Quiz', 'Cloud Types Quiz']
     for c, i in enumerate(choices):
         print(f"#{c+1}: {i}")
     print(f"#{c+2}: Exit Application")
@@ -96,6 +103,8 @@ while True:
         case 8:
             start_quiz.start_game(fiber_question, fiber_answer, user_choice)
         case 9:
+            start_quiz.start_game(cloud_question, cloud_answer, user_choice)
+        case 10:
             print("Thank you for using Port Quizzer!")
             break
         case _:
